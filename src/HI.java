@@ -8,7 +8,6 @@ public class HI {
         float f = 3.14f;
         double d = 12233442042492943d;
         byte b = 127;
-        boolean lol = true;
         short s = 32767;
         System.out.println(a +" "+ FLAT + num + f + d + b +" "+ s );
     }
