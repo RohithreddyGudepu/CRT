@@ -1,3 +1,5 @@
+package Basics;
+
 public class HI {
     public static void main(String[] args) {
         String name = "Rohith";
