@@ -3,13 +3,16 @@ package linkedList;
 import java.util.LinkedList;
 public class SingleLinkedList {
     Node head;
+    private int size = 0;
     class Node{
+
         String data;
         Node next;
 
         Node (String data){
             this.data = data;
             this.next  = null;
+
         }
     }
     public void addFirst(String data){
@@ -73,6 +76,44 @@ public class SingleLinkedList {
         return null;
 
     }
+    public void Maxval(){
+
+        Node current =head;
+        int num=0 ;
+        int max=0;
+        while(current != null){
+            try {
+                num = Integer.parseInt(current.data);
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+            if(num>max){
+                max = num;
+            }
+            current = current.next;
+        }
+        System.out.println("Max value is : "+max);
+    }
+    public void Minval(){
+
+        Node current =head;
+        int num=0 ;
+        int min=100;
+        while(current != null){
+            try {
+                num = Integer.parseInt(current.data);
+            }
+            catch(Exception e){
+                System.out.println(e.getMessage());
+            }
+            if(num<min){
+                min = num;
+            }
+            current = current.next;
+        }
+        System.out.println("Min value is : "+min);
+    }
     public  void printlist(){
         if(head == null){
             System.out.println("List is empty");
@@ -101,6 +142,13 @@ public class SingleLinkedList {
         list.printlist();
         list.deletelast();
         list.printlist();
+        list.addFirst("30");
+        list.addLast("50");
+        list.printlist();
+        list.Maxval();
+        list.Minval();
+
+
 
     }
 
