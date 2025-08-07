@@ -1,10 +1,8 @@
 package linkedList;
 
-import java.util.LinkedList;
 public class SingleLinkedList {
     Node head;
-    private int size = 0;
-    class Node{
+    static class Node{
 
         String data;
         Node next;
@@ -114,6 +112,28 @@ public class SingleLinkedList {
         }
         System.out.println("Min value is : "+min);
     }
+    public void Reverse(){
+        if(head == null || head.next == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node current = head;
+        Node prevNode = null;
+        Node nextNode
+                ;
+        nextNode = null;
+
+        while(current !=null){
+            nextNode = current.next;
+            current.next= prevNode;
+            prevNode = current;
+            current = nextNode;
+
+        }
+        head = prevNode;
+        System.out.println("Reversed list is: ");
+        printlist();
+    }
     public  void printlist(){
         if(head == null){
             System.out.println("List is empty");
@@ -137,16 +157,19 @@ public class SingleLinkedList {
         list.addLast("22");
 
         list.printlist();
+        list.Reverse();
         list.Search("22");
         list.deleteFirst();
-        list.printlist();
+//        list.printlist();
         list.deletelast();
-        list.printlist();
-        list.addFirst("30");
-        list.addLast("50");
-        list.printlist();
+//        list.printlist();
+//        list.addFirst("30");
+//        list.addLast("50");
+//        list.printlist();
         list.Maxval();
-        list.Minval();
+       list.Minval();
+//        list.printlist();
+
 
 
 
